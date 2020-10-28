@@ -1,5 +1,4 @@
 input = [2, 7, 11, 15]
-
 sum = 9
 
 def twoSum(arr, target):
