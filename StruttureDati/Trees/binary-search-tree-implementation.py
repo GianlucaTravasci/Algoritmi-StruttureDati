@@ -10,9 +10,6 @@ class BST:
         self.root = None
         self.number_of_nodes = 0
 
-    def __str__(self):
-        return str(self.__dict__)
-
     def lookup(self, data):
         if self.root is None:
             return 'Tree is empty'
