@@ -6,8 +6,8 @@ class Node:
 
 
 class BST:
-    def __init__(self, root):
-        self.root = root
+    def __init__(self):
+        self.root = None
         self.number_of_nodes = 0
 
     def __str__(self):
@@ -95,3 +95,31 @@ class BST:
                         return
                     else:
                         parent_node.right = None
+                        return
+                elif current_node.left is not None and current_node.right is not None:  # node has left and rigth child
+                    del_node = current_node.right
+                    del_node_parent = current_node.right
+                    while del_node.left is not None:  # loop to reach the left most node of the right subtree of the current node
+                        del_node_parent = del_node
+                        del_node = del_node.left
+                    current_node.data = del_node.data  # the value to be replaced
+                    if del_node == del_node_parent:  # if the node to be replaced is the exact right of the current node
+                        current_node.right = del_node.right
+                        return
+                    if del_node.right is None:  # if the left most node of the right subtree of the current node has no right subtree
+                        del_node_parent.left = None
+                    else:  # if it has a right subtree, we simply link it to the parent of the del_node
+                        del_node_parent.left = del_node.right
+                        return
+        return 'Not Found'
+
+my_bst = BST()
+my_bst.insert(5)
+my_bst.insert(3)
+my_bst.insert(7)
+my_bst.insert(1)
+my_bst.insert(13)
+my_bst.insert(65)
+my_bst.insert(0)
+my_bst.insert(10)
+my_bst.remove(13)
