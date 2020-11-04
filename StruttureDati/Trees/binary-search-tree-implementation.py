@@ -113,6 +113,16 @@ class BST:
                         return
         return 'Not Found'
 
+    def printt(self, curr_nod):
+        if curr_nod is not None:
+            self.printt(curr_nod.left)
+            print(str(curr_nod.data))
+            self.printt(curr_nod.right)
+
+    def print_tree(self):
+        if self.root is not None:
+            self.printt(self.root)
+
 my_bst = BST()
 my_bst.insert(5)
 my_bst.insert(3)
@@ -122,4 +132,5 @@ my_bst.insert(13)
 my_bst.insert(65)
 my_bst.insert(0)
 my_bst.insert(10)
-my_bst.remove(13)
+my_bst.insert(67)
+my_bst.print_tree()
