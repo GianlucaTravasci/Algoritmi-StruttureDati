@@ -82,7 +82,7 @@ class BST:
                             parent_node.left = current_node.right
                             return
                         else:
-                            parent_node.right = current_node.right7
+                            parent_node.right = current_node.right
                 elif current_node.left is None and current_node.right is None:  #the node has no child
                     if parent_node is None:
                         current_node = None
