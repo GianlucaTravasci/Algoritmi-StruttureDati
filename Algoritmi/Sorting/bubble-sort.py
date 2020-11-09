@@ -7,6 +7,7 @@
 def bubble_sort(array):
     iteration_count = 0
     for i in range(len(array) - 1):  # -1 because we don't need to sort the last item
+        print(array)
         for j in range(len(array) - i - 1):
             iteration_count += 1
             if array[j] > array[j + 1]:
@@ -15,4 +16,4 @@ def bubble_sort(array):
 
 
 array = [5, 9, 2, 3, 3, 23, 45, 22]
-bubble_sort(array)
+print(bubble_sort(array))
