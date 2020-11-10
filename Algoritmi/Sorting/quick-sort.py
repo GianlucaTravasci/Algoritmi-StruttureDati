@@ -1,6 +1,6 @@
 # Quick Sort is another sorting algorithm which follows divide and conquer approach. It requires to chose a pivot,
 # then place all elements smaller than the pivot on the left of the pivot and all elements larger on the right Then
-# the array is partitioned in the pivot position and the left and right arrays followthe same procedure until the
+# the array is partitioned in the pivot position and the left and right arrays follow the same procedure until the
 # base case is reached. After each pass the pivot element occupies its correct position in the array. Time Complexity
 # in Best and Average cases is O(nlog N) whereas in worst case it jumps up to O(n^2). Space complexity is O(log n)
 
