@@ -1,5 +1,5 @@
 # Heap Sort as the name suggests, uses the heap data structure. First the array is converted into a binary heap. Then
-# the first element which is the maximum elemet in case of a max-heap, is swapped with the last element so that the
+# the first element which is the maximum element in case of a max-heap, is swapped with the last element so that the
 # maximum element goes to the end of the array as it should be in a sorted array. Then the heap size is reduced by 1
 # and max-heapify function is called on the root. Time complexity is O(nlog N) in all cases and space complexity = O(1)
 
