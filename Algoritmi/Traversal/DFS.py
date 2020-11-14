@@ -145,3 +145,26 @@ def preorder_traversal(node, result):
     return result
 
 
+def postorder_traversal(node, result):
+    if node.left:
+        postorder_traversal(node.left, result)
+    if node.right:
+        postorder_traversal(node.right, result)
+    result.append(node.data)
+    return result
+
+
+my_bst = BST()
+my_bst.insert(5)
+my_bst.insert(3)
+my_bst.insert(7)
+my_bst.insert(1)
+my_bst.insert(13)
+my_bst.insert(65)
+my_bst.insert(0)
+my_bst.insert(10)
+print(f"DFS inorder: {my_bst.DFS_Inorder()}")
+
+print(f"DFS preorder: {my_bst.DFS_Preorder()}")
+
+print(f"DFS postorder: {my_bst.DFS_Postorder()}")
