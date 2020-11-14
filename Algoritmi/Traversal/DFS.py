@@ -136,3 +136,12 @@ def inorder_traversal(node, result):
     return result
 
 
+def preorder_traversal(node, result):
+    result.append(node.data)
+    if node.left:
+        preorder_traversal(node.left, result)
+    if node.right:
+        preorder_traversal(node.right, result)
+    return result
+
+
