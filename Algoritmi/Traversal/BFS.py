@@ -113,4 +113,19 @@ class BST:
                         return
         return 'Not Found'
 
+    # implementation of Breadth first search
+    def BFS(self):
+        current_node = self.root  # start form the root node
+        result = []  # store the result of the BFS algo
+        queue = [current_node]  # in order to store childs node and put the root node as the first node in the queue
+        while len(queue) > 0:
+            current_node = queue.pop(0)  # extract the first element of the queue and make it the current nod
+            result.append(current_node.data)  # We push the data of the current node to the result list as we are
+            # currently visiting the current node
+            if current_node.left:  # If left child of the current node exists, we append it to the queue
+                queue.append(current_node.left)
+            if current_node.right:  # Similarly, if right child exists, we append it to the queue
+                queue.append(current_node.right)
+        return result
+
     
