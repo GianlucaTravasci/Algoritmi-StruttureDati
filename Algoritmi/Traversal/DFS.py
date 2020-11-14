@@ -116,6 +116,23 @@ class BST:
                         return
         return 'Not Found'
 
-    # implementation of Depth first search
+    # Now we'll implement the three kinds of DFS Traversals.
+    def DFS_Inorder(self):
+        return inorder_traversal(self.root, [])
+
+    def DFS_Preorder(self):
+        return preorder_traversal(self.root, [])
+
+    def DFS_Postorder(self):
+        return postorder_traversal(self.root, [])
+
+
+def inorder_traversal(node, result):
+    if node.left:
+        inorder_traversal(node.left, result)
+    result.append(node.data)
+    if node.right:
+        inorder_traversal(node.right, result)
+    return result
 
 
