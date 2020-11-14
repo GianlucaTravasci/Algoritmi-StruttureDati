@@ -128,4 +128,23 @@ class BST:
                 queue.append(current_node.right)
         return result
 
-    
+    def BFS_recursive(self, queue, result):
+        if len(queue) == 0:
+            return result
+        current_node = queue.pop
+        result.append(current_node)
+        if current_node.left:
+            queue.append(current_node.left)
+        if current_node.right:
+            queue.append(current_node.right)
+        return self.BFS_recursive(queue, result)
+
+my_bst = BST()
+my_bst.insert(5)
+my_bst.insert(3)
+my_bst.insert(7)
+my_bst.insert(1)
+my_bst.insert(13)
+my_bst.insert(65)
+my_bst.insert(0)
+my_bst.insert(10)
