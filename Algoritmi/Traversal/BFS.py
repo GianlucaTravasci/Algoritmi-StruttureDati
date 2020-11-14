@@ -6,6 +6,9 @@ class Node:
         self.left = None
         self.right = None
 
+    def __repr__(self):
+        return str(self.data)
+
 
 class BST:
     def __init__(self):
@@ -131,13 +134,14 @@ class BST:
     def BFS_recursive(self, queue, result):
         if len(queue) == 0:
             return result
-        current_node = queue.pop
+        current_node = queue.pop(0)
         result.append(current_node)
         if current_node.left:
             queue.append(current_node.left)
         if current_node.right:
             queue.append(current_node.right)
         return self.BFS_recursive(queue, result)
+
 
 my_bst = BST()
 my_bst.insert(5)
@@ -148,3 +152,5 @@ my_bst.insert(13)
 my_bst.insert(65)
 my_bst.insert(0)
 my_bst.insert(10)
+print(f"BFS: {my_bst.BFS()}")
+print(f"BFS recursive: {my_bst.BFS_recursive([my_bst.root], [])}")
